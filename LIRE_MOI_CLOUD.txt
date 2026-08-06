@@ -1,0 +1,202 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  DÉPLOIEMENT CLOUD — FABRICATION BÉTON KOURAYZEN                 ║
+║  Base Supabase + Hébergement Streamlit Cloud                     ║
+║  Accessible depuis PC, téléphone, tablette — partout             ║
+╚══════════════════════════════════════════════════════════════════╝
+
+⏱️  Durée totale d'installation : environ 1 heure (1re fois).
+    Après ça, tu n'as plus rien à faire — c'est en ligne 24/7.
+
+═════════════════════════════════════════════════════════════════════
+  ÉTAPE 1 — CRÉER LA BASE DE DONNÉES SUPABASE (10 min)
+═════════════════════════════════════════════════════════════════════
+
+1. Va sur : https://supabase.com
+2. Clic sur "Start your project"
+3. Crée un compte (avec Google ou GitHub, c'est gratuit)
+4. Clic sur "New project"
+   - Name : fabrication-beton-kourayzen
+   - Database Password : CHOISIS UN MOT DE PASSE FORT et NOTE-LE
+     (tu en auras besoin plus tard)
+   - Region : choisis "West Europe (Paris)" ou "West Europe (London)"
+   - Plan : Free (0 $)
+5. Clic sur "Create new project"
+6. Attends 1-2 min que Supabase crée ta base
+7. Une fois créée, va dans :
+     Settings (icône engrenage en bas à gauche)
+     → Database
+     → Connection string
+     → Onglet "URI"
+     → Choisis "Session pooler" (compatible IPv4)
+     → Copie l'URL, elle ressemble à :
+       postgresql://postgres.abcdefg:[YOUR-PASSWORD]@aws-0-eu-west-3.pooler.supabase.com:6543/postgres
+8. Dans l'URL, REMPLACE [YOUR-PASSWORD] par le mot de passe de l'étape 4
+9. GARDE cette URL — tu vas la coller à 2 endroits (local + cloud)
+
+═════════════════════════════════════════════════════════════════════
+  ÉTAPE 2 — CRÉER UN COMPTE GITHUB (5 min)
+═════════════════════════════════════════════════════════════════════
+
+Si tu n'en as pas déjà un :
+1. Va sur : https://github.com
+2. Clic sur "Sign up"
+3. Choisis un username (ex: radouane-kourayzen)
+4. Email + mot de passe
+5. Valide ton email
+
+═════════════════════════════════════════════════════════════════════
+  ÉTAPE 3 — METTRE LE CODE SUR GITHUB (15 min)
+═════════════════════════════════════════════════════════════════════
+
+Option A — Simple (via le site GitHub, sans installer Git)
+─────────────────────────────────────────────────────────
+
+1. Sur GitHub, clic sur le "+" en haut à droite → "New repository"
+2. Repository name : fabrication_beton_kourayzen
+3. Description : Application chantier Kourayzen
+4. Coche "Private" (recommandé, pour que ton code ne soit pas public)
+5. Coche "Add a README file"
+6. Clic sur "Create repository"
+
+7. Sur ton PC, ouvre le dossier fabrication_beton_kourayzen
+8. Sélectionne TOUS les fichiers SAUF :
+     - .streamlit/secrets.toml (si présent — CONTIENT TON MOT DE PASSE)
+     - fabrication_beton.db (si présent — vieille BD SQLite)
+     - __pycache__/ (dossier généré par Python)
+9. Retourne sur GitHub, dans ton repo qui vient d'être créé
+10. Clic sur "Add file" → "Upload files"
+11. Glisse-dépose TOUS les fichiers sélectionnés
+12. Écris un message : "Version initiale"
+13. Clic sur "Commit changes"
+
+═════════════════════════════════════════════════════════════════════
+  ÉTAPE 4 — DÉPLOYER SUR STREAMLIT CLOUD (10 min)
+═════════════════════════════════════════════════════════════════════
+
+1. Va sur : https://share.streamlit.io
+2. Clic sur "Sign in with GitHub"
+3. Autorise Streamlit à accéder à tes repos
+4. Clic sur "Create app" en haut à droite
+5. Choisis "Deploy a public app from GitHub" (ou private, selon)
+6. Configuration :
+   - Repository : radouane-kourayzen/fabrication_beton_kourayzen
+   - Branch : main
+   - Main file path : app.py
+   - App URL : choisis un nom (ex: fabrication-beton-kourayzen)
+     → l'URL finale sera : https://fabrication-beton-kourayzen.streamlit.app
+
+7. AVANT de cliquer Deploy, clic sur "Advanced settings"
+8. Dans "Secrets", colle :
+
+     [postgres]
+     url = "postgresql://postgres.abcdefg:MOT_DE_PASSE@aws-0-eu-west-3.pooler.supabase.com:6543/postgres"
+
+     [users.radouane]
+     password = "TON_MDP_ADMIN_SOLIDE"
+     role = "admin"
+
+     [users.pointeur]
+     password = "MDP_POINTEUR"
+     role = "pointeur"
+
+     ⚠️ Remplace :
+       - l'URL par TON URL Supabase (étape 1)
+       - les mots de passe par des VRAIS mots de passe forts
+       - "radouane" par TON prénom si tu veux
+       - Le "pointeur" peut être renommé (ex: [users.ahmed])
+
+9. Clic sur "Save"
+10. Retour à l'écran principal → clic "Deploy!"
+11. Streamlit compile pendant 2-3 min → ton app est en ligne !
+
+═════════════════════════════════════════════════════════════════════
+  ÉTAPE 5 — TESTER DEPUIS PHONE / PC (2 min)
+═════════════════════════════════════════════════════════════════════
+
+1. Ouvre le navigateur (n'importe où : Chrome, Safari, PC ou téléphone)
+2. Tape l'URL de ton app :
+     https://fabrication-beton-kourayzen.streamlit.app
+3. L'app te demande de te connecter :
+   - Tape le nom d'utilisateur (ex: radouane)
+   - Tape le mot de passe que tu as mis dans les Secrets
+4. Une fois connecté, tu vois l'app avec tes formules LPEE prêtes.
+
+Pour ajouter l'app sur l'écran d'accueil de ton téléphone :
+- ANDROID Chrome : menu ⋮ → "Ajouter à l'écran d'accueil"
+- iPhone Safari : Partage ↑ → "Sur l'écran d'accueil"
+
+═════════════════════════════════════════════════════════════════════
+  LES DEUX RÔLES UTILISATEUR
+═════════════════════════════════════════════════════════════════════
+
+👑 ADMIN (toi, Radouane)
+─────────────────────────
+  ✓ Toutes les pages, toutes les actions
+  ✓ Créer / modifier / valider / désactiver les formules
+  ✓ Modifier les densités des matériaux
+  ✓ Gérer les engins et godets
+  ✓ Configurer le stock initial + seuils d'alerte
+  ✓ Voir le journal complet des modifications
+  ✓ Livraisons de matériaux + ajustements manuels
+
+👷 POINTEUR (ton collaborateur sur chantier)
+─────────────────────────────────────────────
+  ✓ Préparer un mélange (utiliser les formules déjà validées)
+  ✓ Enregistrer les productions + saisir les quantités réelles
+  ✓ Terminer / annuler ses productions
+  ✓ Enregistrer les entrées de stock (matériaux qui arrivent)
+  ✓ Faire des ajustements de stock (avec motif)
+  ✓ Consulter le tableau de bord
+  ✗ NE PEUT PAS modifier les formules
+  ✗ NE PEUT PAS modifier les densités
+  ✗ NE PEUT PAS gérer les engins et godets
+  ✗ NE PEUT PAS configurer le stock initial
+  ✗ NE PEUT PAS voir le journal (audit réservé admin)
+
+Toutes les actions du pointeur sont tracées dans le journal
+avec son nom, pour que tu puisses tout auditer en tant qu'admin.
+
+═════════════════════════════════════════════════════════════════════
+  BONUS — UTILISER LOCALEMENT AUSSI (facultatif)
+═════════════════════════════════════════════════════════════════════
+
+Si tu veux garder la possibilité de lancer l'app en local
+(par exemple sans internet pour consultation) :
+
+1. Sur ton PC, dans le dossier fabrication_beton_kourayzen :
+2. Renomme le fichier .streamlit/secrets.toml.example
+   en           .streamlit/secrets.toml
+3. Ouvre-le et remplace l'URL par TON URL Supabase (étape 1)
+4. Sauvegarde
+5. Double-clic sur LANCER_APP.bat → l'app se lance et se connecte
+   à la même BD Supabase
+
+⚠️ Ne partage JAMAIS le fichier secrets.toml — il contient ton mot
+   de passe Supabase.
+
+═════════════════════════════════════════════════════════════════════
+  RÉSUMÉ - CE QUE TU AS APRÈS
+═════════════════════════════════════════════════════════════════════
+
+✅ App accessible depuis n'importe quel navigateur PC/tel/tablette
+✅ Une seule URL à retenir : https://xxx.streamlit.app
+✅ Données safe dans Supabase (500 MB gratuits, largement assez)
+✅ Sauvegarde automatique quotidienne (Supabase le fait)
+✅ Cohérence : même données que tu ouvres sur PC ou téléphone
+✅ Aucun installateur/APK à installer sur les téléphones
+
+═════════════════════════════════════════════════════════════════════
+  EN CAS DE PROBLÈME
+═════════════════════════════════════════════════════════════════════
+
+Erreur "connection refused" au démarrage :
+→ Vérifie l'URL dans les Secrets. Le mot de passe doit être bien
+  remplacé (pas [YOUR-PASSWORD]). Utilise l'URL "Session pooler"
+  IPv4 depuis Supabase.
+
+L'app affiche "Aucune connexion PostgreSQL configurée" :
+→ Va dans Streamlit Cloud → ton app → menu ⋮ → Settings
+→ Onglet Secrets → vérifie que [postgres] url = ... est bien
+  configuré.
+
+Bon chantier !

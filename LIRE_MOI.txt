@@ -1,0 +1,84 @@
+╔══════════════════════════════════════════════════════════════╗
+║  FABRICATION BÉTON — CHANTIER KOURAYZEN                      ║
+║  Application autonome — indépendante de materiaux_kourayzen  ║
+║  Instructions d'installation et de lancement                 ║
+╚══════════════════════════════════════════════════════════════╝
+
+⚠️  PRÉREQUIS : Python 3.9+ installé sur ton PC.
+    - Va sur https://www.python.org/downloads/
+    - Télécharge et installe
+    - IMPORTANT : coche "Add Python to PATH" pendant l'install
+
+
+═════════════════════════════════════════
+  1ère FOIS — INSTALLATION
+═════════════════════════════════════════
+
+  → Double-clique sur   INSTALLER.bat
+
+  Attends que ça affiche "INSTALLATION TERMINÉE".
+  À faire une seule fois.
+
+
+═════════════════════════════════════════
+  UTILISATION QUOTIDIENNE
+═════════════════════════════════════════
+
+  → Double-clique sur   LANCER_APP.bat
+
+  Le navigateur s'ouvre automatiquement.
+  Pour arrêter : ferme la fenêtre noire du terminal
+                 ou appuie sur Ctrl+C dedans.
+
+
+═════════════════════════════════════════
+  OÙ SONT LES DONNÉES ?
+═════════════════════════════════════════
+
+  Toutes tes données (formules, productions, stocks) sont
+  dans le fichier :
+
+      fabrication_beton.db
+
+  → Ce fichier est créé automatiquement au 1er lancement,
+    dans le même dossier que LANCER_APP.bat.
+  → SAUVEGARDE-LE régulièrement (copie sur clé USB / Drive)
+    pour ne pas perdre tes données.
+
+
+═════════════════════════════════════════
+  INDÉPENDANCE vs materiaux_kourayzen
+═════════════════════════════════════════
+
+  Cette application est totalement séparée de ton app
+  materiaux_kourayzen. Elle a sa PROPRE base de données
+  et son propre système de stock.
+
+  Les 2 apps ne se parlent pas — chacune sa vie.
+
+
+═════════════════════════════════════════
+  PAGES DE L'APPLICATION
+═════════════════════════════════════════
+
+  1. 🏗️  Préparer un mélange   — calcul dosages + godets
+  2. 📋  Productions             — liste + saisie réels + écarts
+  3. 📦  Stock                   — entrées + situation + historique
+  4. 🚚  Engins et godets        — gestion chargeur/pelleteuse
+  5. 🧪  Formules                — édition + versionnage
+  6. 📊  Tableau de bord         — statistiques + export Excel
+  7. 📝  Journal                 — historique des modifications
+
+
+═════════════════════════════════════════
+  EN CAS DE PROBLÈME
+═════════════════════════════════════════
+
+  Une fenêtre noire s'affiche avec un message d'erreur ?
+  → Prends une photo/capture d'écran et envoie-la à Claude.
+
+  L'app se lance mais tu vois une erreur dans le navigateur ?
+  → Note l'action que tu venais de faire et envoie-la aussi.
+
+
+Bon chantier !

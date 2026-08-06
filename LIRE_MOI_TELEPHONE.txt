@@ -1,0 +1,113 @@
+╔══════════════════════════════════════════════════════════════╗
+║  UTILISER L'APP DEPUIS TON TÉLÉPHONE                         ║
+║  Méthode Wifi — Gratuite, sans internet, sans compte         ║
+╚══════════════════════════════════════════════════════════════╝
+
+═════════════════════════════════════════
+  SETUP 1re FOIS
+═════════════════════════════════════════
+
+Étape 1 — Mets ton PC et ton téléphone sur le même wifi
+─────────────────────────────────────────────────────────
+
+Deux options possibles :
+
+  OPTION A — Utiliser le wifi du chantier / bureau
+  ------------------------------------------------
+  Connecte le PC et le téléphone au même wifi.
+
+  OPTION B — Utiliser le partage de connexion 4G du téléphone
+  -----------------------------------------------------------
+  Sur ton téléphone : active "Point d'accès mobile" ou "Partage
+  de connexion" (dans Paramètres > Réseau).
+  Connecte le PC à ce wifi.
+
+  → Pas besoin d'être connecté à internet, les 2 appareils juste
+    doivent être sur le MÊME réseau.
+
+
+Étape 2 — Lance l'app sur ton PC en mode réseau
+───────────────────────────────────────────────
+
+  → Double-clique sur   LANCER_APP_WIFI.bat
+
+  Une fenêtre noire s'ouvre et t'affiche des adresses comme :
+
+     ==> http://192.168.1.15:8501
+     ==> http://192.168.43.100:8501
+
+  Note l'adresse qui commence par 192.168... (une seule marchera).
+
+
+Étape 3 — Ouvre l'app sur ton téléphone
+────────────────────────────────────────
+
+  1. Ouvre Chrome (Android) ou Safari (iPhone)
+  2. Tape l'adresse dans la barre du haut :
+
+     http://192.168.1.15:8501  (par exemple)
+
+  3. L'app s'ouvre — c'est EXACTEMENT la même que sur le PC
+
+
+Étape 4 — Ajouter l'app à l'écran d'accueil du tel
+───────────────────────────────────────────────────
+
+Pour l'avoir comme une "vraie" application :
+
+  ANDROID (Chrome) :
+  ─────────────────
+  1. Une fois l'app ouverte, tape le menu ⋮ (3 points en haut)
+  2. Sélectionne "Ajouter à l'écran d'accueil"
+  3. Nomme-la "Fabrication Béton"
+  4. Une icône apparaît sur ton écran d'accueil
+
+  iPhone (Safari) :
+  ─────────────────
+  1. Tape le bouton Partage (carré avec flèche vers le haut)
+  2. Sélectionne "Sur l'écran d'accueil"
+  3. Nomme "Fabrication Béton"
+  4. Une icône apparaît
+
+
+═════════════════════════════════════════
+  UTILISATION QUOTIDIENNE
+═════════════════════════════════════════
+
+  1. Allume ton PC portable et double-clique   LANCER_APP_WIFI.bat
+  2. Sur ton tel : tape l'icône "Fabrication Béton" sur l'écran
+     d'accueil
+  3. Utilise l'app depuis le tel — les modifs vont directement
+     dans la BD du PC
+
+
+═════════════════════════════════════════
+  À SAVOIR
+═════════════════════════════════════════
+
+  ✅ Toutes tes données restent sur ton PC
+  ✅ Pas besoin d'internet — juste un wifi local ou hotspot
+  ✅ Gratuit, sans compte, sans limite
+  ✅ Interface identique PC / téléphone
+
+  ⚠️ Le PC doit rester allumé pendant que tu utilises le tel
+  ⚠️ Si tu changes de wifi, l'adresse http://192.168... peut changer.
+     Relance LANCER_APP_WIFI.bat pour voir la nouvelle adresse.
+
+
+═════════════════════════════════════════
+  ALTERNATIVES SI ÇA NE MARCHE PAS
+═════════════════════════════════════════
+
+  1. Le pare-feu Windows peut bloquer la connexion. Quand tu lances
+     LANCER_APP_WIFI.bat pour la 1ère fois, Windows demande
+     "Autoriser Python à communiquer sur le réseau ?" → dis OUI.
+
+  2. Si l'app ne s'ouvre pas sur le tel :
+     - Vérifie que le PC et le tel sont bien sur le MÊME wifi
+     - Essaie une autre adresse http://... affichée
+     - Redémarre le wifi du tel
+
+  3. Autre solution : Streamlit Cloud (gratuit, mais tes données
+     seraient sur les serveurs Streamlit). Demande à Claude si
+     tu veux qu'on regarde cette option.
